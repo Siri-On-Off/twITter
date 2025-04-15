@@ -1,5 +1,5 @@
 <script setup>
-import { RouterView } from 'vue-router'  
+import { RouterLink } from 'vue-router'  
 import IconLogin from './IconLogin.vue'
 import IconHome from './IconHome.vue'
 </script>
