@@ -8,8 +8,6 @@ import IconSparkles from './components/icons/IconSparkles.vue'
   <div class="container">
     <div class="grid">
       <aside class="sidebar sidebar--left">
-
-
         <!-- Navigation -->
         <nav class="nav">
           <a href="#" class="router-link-active">

@@ -44,10 +44,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@esbuild/linux-x64@0.16.12":
+"@esbuild/win32-x64@0.16.12":
   version "0.16.12"
-  resolved "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.16.12.tgz"
-  integrity sha512-e8YA7GQGLWhvakBecLptUiKxOk4E/EPtSckS1i0MGYctW8ouvNUoh7xnU15PGO2jz7BYl8q1R6g0gE5HFtzpqQ==
+  resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.12.tgz"
+  integrity sha512-iPYKN78t3op2+erv2frW568j1q0RpqX6JOLZ7oPPaAV1VaF7dDstOrNw37PVOYoTWE11pV4A1XUitpdEFNIsPg==
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
