@@ -2,18 +2,18 @@
 import LoginInfo from "../components/LoginInfo.vue";
 import Composer from "../components/Composer.vue";
 import Tweet from "../components/Tweet.vue";
-import { onMounted } from 'vue';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue'
 import { fetchStream } from '../api/requests'
 
 const loading = ref(true)
+const tweets = ref([]) 
 
 onMounted(async () => {
   loading.value = true
     try {
         const stream = await fetchStream()
         
-        console.log('Stream geladen', stream)
+        tweets.value = stream
     } catch (error) {
         console.error(error)
     } finally {
@@ -29,14 +29,15 @@ onMounted(async () => {
   <!-- Stream -->
   <section class="stream" v-if="!loading">
     <Tweet
-      v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9]"
-      :user="{ id: 1, name: 'John Doe' }"
-      :text="'Lorem ipsum dolor med'"
-      :createdAt="'2023-01-01T12:00:00Z'"
+      v-for="tweet in tweets"
+      :key="tweet.id"
+      :user="{ id: tweet.id, name: tweet.name }"
+      :text="tweet.text"
+      :createdAt="tweet.created_at"
     />
   </section>
 
-  <div class="loading">
+  <div class="loading" v-if="loading">
     Lade Tweets...
   </div>
 </template>
