@@ -1,8 +1,9 @@
 <script setup>
-import Logo from "./components/icons/Logo.vue";
-import Navigation from "./components/icons/Navigation.vue";
-import HomeViews from "./views/HomeView.vue";
 import { RouterLink, RouterView } from "vue-router";
+import Logo from "./components/Logo.vue";
+import Navigation from "./components/Navigation.vue";
+import HomeViews from "./views/HomeView.vue";
+import Widget from "./components/Widget.vue";
 </script>
 
 <template>
@@ -19,9 +20,7 @@ import { RouterLink, RouterView } from "vue-router";
 
       <aside class="sidebar sidebar--right">
         <!-- Top User Widget -->
-        <section class="widget">
-          <h2 class="widget__heading">Top User</h2>
-
+        <Widget title="Top User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
@@ -30,12 +29,9 @@ import { RouterLink, RouterView } from "vue-router";
               </a>
             </li>
           </ul>
-        </section>
-
+        </Widget>
         <!-- Neue User Widget -->
-        <section class="widget">
-          <h2 class="widget__heading">Neue User</h2>
-
+        <Widget title="Neue User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
@@ -44,7 +40,7 @@ import { RouterLink, RouterView } from "vue-router";
               </a>
             </li>
           </ul>
-        </section>
+        </Widget>
       </aside>
     </div>
   </div>

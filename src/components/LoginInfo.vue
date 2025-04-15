@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink } from 'vue-router'  
-import IconSparkles from './IconSparkles.vue'
+import IconSparkles from './icons/IconSparkles.vue'
 </script>
 
 <template>

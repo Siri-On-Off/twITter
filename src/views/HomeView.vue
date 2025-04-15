@@ -1,7 +1,7 @@
 <script setup>
-import LoginInfo from "../components/icons/LoginInfo.vue";
-import Composer from "../components/icons/Composer.vue";
-import Tweet from "../components/icons/Tweet.vue";
+import LoginInfo from "../components/LoginInfo.vue";
+import Composer from "../components/Composer.vue";
+import Tweet from "../components/Tweet.vue";
 </script>
 
 <template>

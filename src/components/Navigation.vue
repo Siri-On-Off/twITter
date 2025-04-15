@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from 'vue-router'  
-import IconLogin from './IconLogin.vue'
-import IconHome from './IconHome.vue'
+import IconLogin from './icons/IconLogin.vue'
+import IconHome from './icons/IconHome.vue'
 </script>
 
 <template>
