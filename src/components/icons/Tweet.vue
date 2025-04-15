@@ -1,6 +1,7 @@
 <script setup>
     defineProps(['tweet'])
 </script>
+
 <template>
   <!-- Tweet -->
   <div class="tweet">
