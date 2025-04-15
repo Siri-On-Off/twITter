@@ -1,4 +1,5 @@
 <script setup>
+import IconSparkles from './IconSparkles.vue'
 </script>
 
 <template>
@@ -15,3 +16,11 @@
     </div>
   </section>
 </template>
+
+<style>
+
+
+
+
+
+</style>

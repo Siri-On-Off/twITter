@@ -1,14 +1,9 @@
 <script setup>
-import IconHome from './components/icons/IconHome.vue'
-import IconLogin from './components/icons/IconLogin.vue'
-import IconSparkles from './components/icons/IconSparkles.vue'
-import Logo from './components/icons/Logo.vue'
-import Navigation from './components/icons/Navigation.vue'
-import LoginInfo from './components/icons/LoginInfo.vue'
-import Composer from './components/icons/Composer.vue'
-import Tweet from './components/icons/Tweet.vue'
-
-
+import Logo from "./components/icons/Logo.vue";
+import Navigation from "./components/icons/Navigation.vue";
+import LoginInfo from "./components/icons/LoginInfo.vue";
+import Composer from "./components/icons/Composer.vue";
+import Tweet from "./components/icons/Tweet.vue";
 </script>
 
 <template>
@@ -20,30 +15,24 @@ import Tweet from './components/icons/Tweet.vue'
       </aside>
       <main class="content">
         <LoginInfo />
-        <Composer /> 
+        <Composer />
 
         <!-- Stream -->
         <section class="stream">
-          <Tweet v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9]" :tweet="tweet"/> 
+          <Tweet v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9]" :tweet="tweet" />
         </section>
       </main>
 
       <aside class="sidebar sidebar--right">
         <!-- Top User Widget -->
         <section class="widget">
-          <h2 class="widget__heading">
-            Top User
-          </h2>
+          <h2 class="widget__heading">Top User</h2>
 
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
-                <span class="content-list__meta">
-                  94 Tweets
-                </span>
-                <span class="content-list__text">
-                  Max Mustermann
-                </span>
+                <span class="content-list__meta"> 94 Tweets </span>
+                <span class="content-list__text"> Max Mustermann </span>
               </a>
             </li>
           </ul>
@@ -51,19 +40,13 @@ import Tweet from './components/icons/Tweet.vue'
 
         <!-- Neue User Widget -->
         <section class="widget">
-          <h2 class="widget__heading">
-            Neue User
-          </h2>
+          <h2 class="widget__heading">Neue User</h2>
 
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
               <a href="#">
-                <span class="content-list__meta">
-                  30.12.2022 15:00
-                </span>
-                <span class="content-list__text">
-                  Max Mustermann
-                </span>
+                <span class="content-list__meta"> 30.12.2022 15:00 </span>
+                <span class="content-list__text"> Max Mustermann </span>
               </a>
             </li>
           </ul>
@@ -74,13 +57,15 @@ import Tweet from './components/icons/Tweet.vue'
 </template>
 
 <style>
-
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   background: #0f172a;
   color: #f8fafc;
   margin: 0;
@@ -99,8 +84,6 @@ body {
   grid-template-columns: 220px auto 260px;
 }
 
-
-
 .content {
   min-height: 100vh;
   border-right: 1px solid #1e293b;
@@ -117,8 +100,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-
 
 .composer {
   position: relative;
@@ -191,7 +172,7 @@ a {
   color: #e2e8f0;
   display: inline-flex;
   align-items: center;
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
   white-space: nowrap;
   justify-content: center;
   cursor: pointer;
@@ -212,12 +193,12 @@ a {
 }
 
 .btn--transparent {
-  background: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
 .btn--secondary:hover {
-  background: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .btn--block {
@@ -269,7 +250,7 @@ a {
 
 .tweet__timestamp {
   color: #64748b;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .tweet__text {
@@ -281,7 +262,11 @@ a {
 .widget {
   padding: 20px;
   margin: 20px 0 20px 20px;
-  background-image: linear-gradient(to bottom right, rgba(30, 41, 59, .5), rgba(30, 41, 59, .4));
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(30, 41, 59, 0.5),
+    rgba(30, 41, 59, 0.4)
+  );
   border-radius: 10px;
   border: 1px solid #1e293b;
 }
@@ -304,22 +289,20 @@ a {
 
 .content-list__meta {
   color: #64748b;
-  font-size: .8rem;
+  font-size: 0.8rem;
   display: block;
   margin-bottom: 3px;
 }
 
 .content-list__text {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.25;
 }
 
-
-
 .form-label {
   display: block;
-  font-size: .95rem;
-  margin-bottom: .6rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
   color: #cbd5e1;
 }
 
@@ -330,8 +313,8 @@ a {
   appearance: none;
   border: 1px solid #334155;
   height: 2.6rem;
-  padding: .5rem 1rem;
-  border-radius: .25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
 }
 
 .form-input::placeholder {
@@ -349,16 +332,14 @@ a {
 
 .form-error {
   color: #e11d48;
-  font-size: .8rem;
-  margin-top: .5rem;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .loading {
   text-align: center;
   margin-top: 5rem;
 }
-
-
 
 .login {
   display: flex;
@@ -401,44 +382,4 @@ a {
   top: 0;
   z-index: 10;
 }
-
-.logo {
-  font-size: 2.6rem;
-  font-weight: 500;
-  padding: 20px 0;
-
-  background: linear-gradient(to bottom, #fb7185, #e11d48);
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.logo strong {
-  font-weight: 800;
-}
-
-.nav {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav a {
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  padding: 12px 0;
-  color: #64748b;
-}
-
-.nav a.router-link-active,
-.nav a:hover {
-  color: inherit;
-}
-
-.nav a svg {
-  width: 30px;
-  margin-right: 30px;
-}
-
 </style>
