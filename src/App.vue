@@ -1,9 +1,8 @@
 <script setup>
 import Logo from "./components/icons/Logo.vue";
 import Navigation from "./components/icons/Navigation.vue";
-import LoginInfo from "./components/icons/LoginInfo.vue";
-import Composer from "./components/icons/Composer.vue";
-import Tweet from "./components/icons/Tweet.vue";
+import HomeViews from "./views/HomeView.vue";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -13,14 +12,10 @@ import Tweet from "./components/icons/Tweet.vue";
         <Logo />
         <Navigation />
       </aside>
-      <main class="content">
-        <LoginInfo />
-        <Composer />
 
-        <!-- Stream -->
-        <section class="stream">
-          <Tweet v-for="tweet in [1, 2, 3, 4, 5, 6, 7, 8, 9]" :tweet="tweet" />
-        </section>
+      <main class="content">
+        <HomeViews />
+        <RouterView />
       </main>
 
       <aside class="sidebar sidebar--right">
@@ -381,5 +376,44 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav a {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  color: #64748b;
+}
+
+.nav a.router-link-active,
+.nav a:hover {
+  color: inherit;
+}
+
+.nav a svg {
+  width: 30px;
+  margin-right: 30px;
+}
+
+.logo {
+  font-size: 2.6rem;
+  font-weight: 500;
+  padding: 20px 0;
+
+  background: linear-gradient(to bottom, #fb7185, #e11d48);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo strong {
+  font-weight: 800;
 }
 </style>
