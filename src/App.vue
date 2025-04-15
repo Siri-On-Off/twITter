@@ -1,6 +1,6 @@
 <script setup>
-import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
+import IconLogin from './components/icons/IconLogin.vue'
 import IconSparkles from './components/icons/IconSparkles.vue'
 import Logo from './components/icons/Logo.vue'
 import Navigation from './components/icons/Navigation.vue'
@@ -15,23 +15,7 @@ import Navigation from './components/icons/Navigation.vue'
         <Navigation />
       </aside>
       <main class="content">
-
-        <!-- Login Info -->
-        <section class="login-info">
-          <div class="login-info__icon">
-            <IconSparkles/>
-          </div>
-          <div class="login-info__content">
-            <h2 class="login-info__heading">
-              Du bist nicht angemeldet
-            </h2>
-            <div class="login-info__action">
-              <a href="#" class="btn btn--transparent">
-                Zum Login &nbsp; &rarr;
-              </a>
-            </div>
-          </div>
-        </section>
+        <LoginInfo />
 
         <!-- Composer -->
         <form class="composer">
@@ -356,20 +340,7 @@ a {
   line-height: 1.25;
 }
 
-.login {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-}
 
-.login-wrapper {
-  max-width: 360px;
-  width: 100%;
-  margin: 0 auto;
-  border: 1px solid #1e293b;
-  padding: 2rem;
-}
 
 .form-label {
   display: block;
@@ -412,4 +383,88 @@ a {
   text-align: center;
   margin-top: 5rem;
 }
+
+
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.login-wrapper {
+  max-width: 360px;
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #1e293b;
+  padding: 2rem;
+}
+
+.login-info__icon svg {
+  width: 50px;
+}
+
+.login-info__heading {
+  margin: 0;
+  line-height: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.login-info__content {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.login-info {
+  padding: 20px;
+  color: #f1f5f9;
+  background: #334155;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 2.6rem;
+  font-weight: 500;
+  padding: 20px 0;
+
+  background: linear-gradient(to bottom, #fb7185, #e11d48);
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo strong {
+  font-weight: 800;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav a {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  color: #64748b;
+}
+
+.nav a.router-link-active,
+.nav a:hover {
+  color: inherit;
+}
+
+.nav a svg {
+  width: 30px;
+  margin-right: 30px;
+}
+
 </style>
