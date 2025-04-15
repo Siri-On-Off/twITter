@@ -16,11 +16,3 @@ import IconSparkles from './IconSparkles.vue'
     </div>
   </section>
 </template>
-
-<style>
-
-
-
-
-
-</style>

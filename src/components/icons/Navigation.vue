@@ -15,29 +15,3 @@ import IconHome from './IconHome.vue'
     </a>
   </nav>
 </template>
-
-<style>
-
-.nav {
-  display: flex;
-  flex-direction: column;
-}
-
-.nav a {
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  padding: 12px 0;
-  color: #64748b;
-}
-
-.nav a.router-link-active,
-.nav a:hover {
-  color: inherit;
-}
-
-.nav a svg {
-  width: 30px;
-  margin-right: 30px;
-}
-</style>
