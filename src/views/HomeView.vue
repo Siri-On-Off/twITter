@@ -4,9 +4,16 @@ import Composer from "../components/Composer.vue";
 import Tweet from "../components/Tweet.vue";
 import { onMounted, ref } from 'vue'
 import { fetchStream } from '../api/requests'
+import { checkAuth } from '../api/requests'
 
 const loading = ref(true)
 const tweets = ref([]) 
+
+onMounted(async () => {
+  const response = await checkAuth()
+  
+  console.log('checkAuth Resultat', response)
+})
 
 onMounted(async () => {
   loading.value = true

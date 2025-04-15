@@ -1,11 +1,14 @@
 <script setup>
 import { RouterLink } from 'vue-router'  
 import IconSparkles from './icons/IconSparkles.vue'
+import { useAuth } from '../api/auth'
+
+const { isLoggedIn } = useAuth()
 </script>
 
 <template>
   <!-- Login Info -->
-  <section class="login-info">
+  <section class="login-info" v-if="!isLoggedIn">
     <div class="login-info__icon">
       <IconSparkles />
     </div>

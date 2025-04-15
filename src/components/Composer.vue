@@ -1,12 +1,14 @@
 <script setup>
 import { ref } from "vue"
+import { useAuth } from '../api/auth'
 
+const { isLoggedIn } = useAuth()
 const tweetText = ref('')
 </script>
 
 <template>
   <!-- Composer -->
-  <form class="composer">
+  <form class="composer" v-if="isLoggedIn">
     <label class="composer__prompt">Was geht?</label>
     <textarea
       maxlength="160"
