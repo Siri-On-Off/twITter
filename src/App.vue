@@ -2,23 +2,17 @@
 import IconLogin from './components/icons/IconLogin.vue'
 import IconHome from './components/icons/IconHome.vue'
 import IconSparkles from './components/icons/IconSparkles.vue'
+import Logo from './components/icons/Logo.vue'
+import Navigation from './components/icons/Navigation.vue'
+
 </script>
 
 <template>
   <div class="container">
     <div class="grid">
       <aside class="sidebar sidebar--left">
-        <!-- Navigation -->
-        <nav class="nav">
-          <a href="#" class="router-link-active">
-            <IconHome/>
-            Stream
-          </a>
-          <a href="#">
-            <IconLogin/>
-            Login
-          </a>
-        </nav>
+        <Logo />
+        <Navigation />
       </aside>
       <main class="content">
 
@@ -147,21 +141,7 @@ body {
   grid-template-columns: 220px auto 260px;
 }
 
-.logo {
-  font-size: 2.6rem;
-  font-weight: 500;
-  padding: 20px 0;
 
-  background: linear-gradient(to bottom, #fb7185, #e11d48);
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.logo strong {
-  font-weight: 800;
-}
 
 .content {
   min-height: 100vh;
@@ -180,28 +160,7 @@ a {
   color: inherit;
 }
 
-.nav {
-  display: flex;
-  flex-direction: column;
-}
 
-.nav a {
-  font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  padding: 12px 0;
-  color: #64748b;
-}
-
-.nav a.router-link-active,
-.nav a:hover {
-  color: inherit;
-}
-
-.nav a svg {
-  width: 30px;
-  margin-right: 30px;
-}
 
 .composer {
   position: relative;
