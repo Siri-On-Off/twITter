@@ -2,7 +2,7 @@
 import Logo from "./components/icons/Logo.vue";
 import Navigation from "./components/icons/Navigation.vue";
 import HomeViews from "./views/HomeView.vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
@@ -14,7 +14,6 @@ import { RouterLink } from "vue-router";
       </aside>
 
       <main class="content">
-        <HomeViews />
         <RouterView />
       </main>
 
