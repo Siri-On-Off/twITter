@@ -1,9 +1,9 @@
 <script setup>
-    defineProps({
-      user: Object,
-      text: String,
-      createdAt: String
-    })
+defineProps({
+  user: Object,
+  text: String,
+  createdAt: String,
+});
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script setup>
-import { RouterLink } from 'vue-router'  
-import IconSparkles from './icons/IconSparkles.vue'
-import { useAuth } from '../api/auth'
+import { RouterLink } from "vue-router";
+import IconSparkles from "./icons/IconSparkles.vue";
+import { useAuth } from "../api/auth";
 
-const { isLoggedIn } = useAuth()
+const { isLoggedIn } = useAuth();
 </script>
 
 <template>
@@ -15,7 +15,7 @@ const { isLoggedIn } = useAuth()
     <div class="login-info__content">
       <h2 class="login-info__heading">Du bist nicht angemeldet</h2>
       <div class="login-info__action">
-        <RouterLink to="/login" class="btn btn--transparent"> 
+        <RouterLink to="/login" class="btn btn--transparent">
           Zum Login &nbsp; &rarr;
         </RouterLink>
       </div>

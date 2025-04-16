@@ -5,12 +5,12 @@ import IconHome from './icons/IconHome.vue'
 import { computed } from 'vue';
 import { useAuth } from '../api/auth'
 
-// "logout" neu auch importieren.
+// "isLoggedIn, logout" importieren.
 const { isLoggedIn, logout } = useAuth()
 
 // Logout-Funktion beim Klick ausführen
 const handleLogout = () => {
-  logout()  // ← führt Logout durch (und sollte isLoggedIn aktualisieren)
+  logout()  // führt Logout durch (und sollte isLoggedIn aktualisieren)
 }
 </script>
 

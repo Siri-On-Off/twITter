@@ -1,12 +1,12 @@
 <script setup>
-defineProps(['title'])
+defineProps(["title"]);
 </script>
 
 <template>
   <!-- Top User Widget -->
   <section class="widget">
     <h2 class="widget__heading">
-    {{ title }}
+      {{ title }}
     </h2>
 
     <!-- Hier wird der Inhalt des <Widget> Tags gerendert -->

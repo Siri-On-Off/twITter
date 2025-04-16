@@ -1,10 +1,10 @@
 <script setup>
-import { ref } from 'vue';
-import { loginUser } from '../api/requests.js';
-import { useRouter } from 'vue-router';
+import { ref } from "vue";
+import { loginUser } from "../api/requests.js";
+import { useRouter } from "vue-router";
 
-const email = ref('');
-const password = ref('');
+const email = ref("");
+const password = ref("");
 const errors = ref({});
 const router = useRouter();
 
@@ -13,12 +13,12 @@ async function login() {
     // Versuche, den Benutzer einzuloggen.
     await loginUser(email.value, password.value);
     // Alles okay! Umleiten zur HomeView
-    await router.push('/')
+    await router.push("/");
   } catch (exception) {
     // Die Zugangsdaten waren falsch, logge die Exception.
     console.error("login error", exception);
 
-    // Übernehme die Fehlermeldungen aus der Exception. 
+    // Übernehme die Fehlermeldungen aus der Exception.
     errors.value = exception.errors;
   }
 }

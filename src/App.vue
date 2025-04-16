@@ -19,7 +19,6 @@ import Widget from "./components/Widget.vue";
       </main>
 
       <aside class="sidebar sidebar--right">
-        <!-- Top User Widget -->
         <Widget title="Top User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
@@ -30,7 +29,6 @@ import Widget from "./components/Widget.vue";
             </li>
           </ul>
         </Widget>
-        <!-- Neue User Widget -->
         <Widget title="Neue User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
