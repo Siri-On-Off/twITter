@@ -1,7 +1,7 @@
 <script setup>
 import { format, formatDistance } from "date-fns";
-import { de } from 'date-fns/locale';
-import { likeTweet } from '../api/requests';
+import { de } from "date-fns/locale";
+import { likeTweet } from "../api/requests";
 import { ref } from "vue";
 import { useAuth } from "../api/auth";
 import { RouterLink } from "vue-router";
@@ -12,7 +12,7 @@ const props = defineProps({
   likes: {
     type: Number,
     required: true,
-    default: 0
+    default: 0,
   },
   user: {
     type: Object,
@@ -34,26 +34,24 @@ const props = defineProps({
 
 //Day.Month.Year HH:MM
 //const formattedDate = format(new Date(props.createdAt), "dd.MM.yyyy HH:mm");
-const distance = formatDistance(
-  new Date(props.createdAt), 
-  new Date(),
-  {locale: de}
-)
+const distance = formatDistance(new Date(props.createdAt), new Date(), {
+  locale: de,
+});
 
 const currentLikes = ref(props.likes);
 
 const addLikes = async () => {
-  if(!isLoggedIn.value) {
+  if (!isLoggedIn.value) {
     return;
   }
 
   try {
-     const tweet = await likeTweet(props.id)
-     currentLikes.value = tweet.likes;
+    const tweet = await likeTweet(props.id);
+    currentLikes.value = tweet.likes;
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
-}
+};
 </script>
 
 <template>
@@ -73,7 +71,7 @@ const addLikes = async () => {
         <button @click.prevent="addLikes" v-if="isLoggedIn">
           {{ currentLikes }} 💗
         </button>
-        <RouterLink to="/" v-else>
+        <RouterLink to="/login" v-else>
           {{ currentLikes }} 💗
         </RouterLink>
       </div>
