@@ -19,7 +19,6 @@ onMounted(async () => {
   loading.value = true
     try {
         const stream = await fetchStream()
-        
         tweets.value = stream
     } catch (error) {
         console.error(error)
@@ -38,7 +37,7 @@ onMounted(async () => {
     <Tweet
       v-for="tweet in tweets"
       :key="tweet.id"
-      :user="{ id: tweet.id, name: tweet.name }"
+      :user="{ id: tweet.user.id, name: tweet.user.name }"
       :text="tweet.text"
       :createdAt="tweet.created_at"
     />
