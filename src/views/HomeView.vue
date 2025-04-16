@@ -18,8 +18,8 @@ onMounted(async () => {
 onMounted(async () => {
   loading.value = true
   try {
+    const stream = await fetchStream()
     tweets.value = stream
-    // const stream = await fetchStream()
     } catch (error) {
         console.error(error)
     } finally {
