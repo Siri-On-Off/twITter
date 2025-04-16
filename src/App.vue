@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation.vue";
 import HomeViews from "./views/HomeView.vue";
 import Widget from "./components/Widget.vue";
 import TopUserWidget from "./components/TopUserWidget.vue";
+import NewUserWidget from "./components/NewUserWidget.vue";
 
 </script>
 
@@ -22,16 +23,7 @@ import TopUserWidget from "./components/TopUserWidget.vue";
 
       <aside class="sidebar sidebar--right">
         <TopUserWidget />        
-        <Widget title="Neue User">
-          <ul class="content-list">
-            <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
-              <a href="#">
-                <span class="content-list__meta"> 30.12.2022 15:00 </span>
-                <span class="content-list__text"> Max Mustermann </span>
-              </a>
-            </li>
-          </ul>
-        </Widget>
+        <NewUserWidget />
       </aside>
     </div>
   </div>
