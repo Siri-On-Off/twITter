@@ -2,7 +2,6 @@
 import Widget from "./Widget.vue";
 import { onMounted, ref } from "vue";
 import { fetchTopUsers } from "../api/requests";
-import { RouterLink } from "vue-router";
 
 const topUsers = ref([]);
 const loading = ref(true);
