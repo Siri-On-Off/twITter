@@ -3,8 +3,7 @@ import LoginInfo from "../components/LoginInfo.vue";
 import Composer from "../components/Composer.vue";
 import Tweet from "../components/Tweet.vue";
 import { onMounted, ref } from "vue";
-import { fetchStream } from "../api/requests";
-import { checkAuth } from "../api/requests";
+import { fetchStream, checkAuth } from "../api/requests";
 
 const loading = ref(true);
 const tweets = ref([]);

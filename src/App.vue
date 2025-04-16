@@ -4,6 +4,8 @@ import Logo from "./components/Logo.vue";
 import Navigation from "./components/Navigation.vue";
 import HomeViews from "./views/HomeView.vue";
 import Widget from "./components/Widget.vue";
+import TopUserWidget from "./components/TopUserWidget.vue";
+
 </script>
 
 <template>
@@ -19,16 +21,7 @@ import Widget from "./components/Widget.vue";
       </main>
 
       <aside class="sidebar sidebar--right">
-        <Widget title="Top User">
-          <ul class="content-list">
-            <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
-              <a href="#">
-                <span class="content-list__meta"> 94 Tweets </span>
-                <span class="content-list__text"> Max Mustermann </span>
-              </a>
-            </li>
-          </ul>
-        </Widget>
+        <TopUserWidget />        
         <Widget title="Neue User">
           <ul class="content-list">
             <li class="content-list__item" v-for="user in [1, 2, 3, 4, 5]">
