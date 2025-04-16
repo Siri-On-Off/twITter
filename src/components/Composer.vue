@@ -5,10 +5,13 @@ import { createTweet } from './../api/requests'
 
 const { isLoggedIn } = useAuth()
 const tweetText = ref('')
+const emit = defineEmits()
 
-function sendTweet() {
-  console.log("Tweet senden:", tweetText.value)
-  createTweet(tweetText.value)
+async function sendTweet() {
+  console.log("Tweet posted:", tweetText.value)
+  await createTweet(tweetText.value)
+  emit('posted')  // Der 'posted' Event wird ausgelöst
+  console.log("posted")
   tweetText.value = ''
 }
 </script>

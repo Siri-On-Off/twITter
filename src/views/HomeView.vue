@@ -9,28 +9,45 @@ import { checkAuth } from '../api/requests'
 const loading = ref(true)
 const tweets = ref([]) 
 
-onMounted(async () => {
-  const response = await checkAuth()
-  
-  console.log('checkAuth Resultat', response)
-})
-
-onMounted(async () => {
+// Funktion zum Laden des Streams
+const loadStream = async () => {
   loading.value = true
   try {
     const stream = await fetchStream()
-    tweets.value = stream
-    } catch (error) {
-        console.error(error)
-    } finally {
-        loading.value = false
-    }
+    tweets.value = stream // Stream neu laden
+  } catch (error) {
+    console.error(error)
+  } finally {
+    loading.value = false
+  }
+}
+
+// Authentifizierung und Stream laden bei Initialisierung
+onMounted(async () => {
+  loading.value = true
+
+  try {
+    const response = await checkAuth()
+    console.log('checkAuth Resultat', response)
+
+    await loadStream()
+  } catch (error) {
+    console.error(error)
+  } 
 })
+
+
+// Event empfangen und Stream neu laden
+const handleNewTweet = () => {
+  loadStream() // Neuen Stream vom Backend holen
+}
 </script>
 
 <template>
   <LoginInfo />
-  <Composer />
+
+  <!-- Composer-Komponente, bei der der 'posted' Event empfangen wird -->
+  <Composer @posted="handleNewTweet" />
 
   <!-- Stream -->
   <section class="stream" v-if="!loading">
