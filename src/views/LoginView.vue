@@ -1,14 +1,25 @@
 <script setup>
-import { ref } from "vue"
+import { ref } from 'vue';
+import { loginUser } from '../api/requests.js';
 
-const email = ref('')
-const password = ref('')
+const email = ref('');
+const password = ref('');
 
-async function login () {
-  console.log('login', email.value, password.value)
+const errors = ref({});
+
+async function login() {
+  try {
+    // Versuche, den Benutzer einzuloggen.
+    await loginUser(email.value, password.value);
+  } catch (exception) {
+    // Die Zugangsdaten waren falsch, logge die Exception.
+    console.error("login error", exception);
+
+    // Übernehme die Fehlermeldungen aus der Exception. 
+    errors.value = exception.errors;
+  }
 }
 </script>
-
 
 <template>
   <div class="login">
@@ -17,19 +28,27 @@ async function login () {
         <div class="form-group">
           <label class="form-label" for="email">E-Mail</label>
           <input class="form-input" type="email" id="email" v-model="email" />
-          <div class="form-error">
-            Ungültige E-Mail
+          <div class="form-error" v-if="errors.email">
+            {{ errors.email }}
           </div>
         </div>
         <div class="form-group">
           <label class="form-label" for="password">Passwort</label>
-          <input class="form-input" type="password" id="password" v-model="password" />
-          <div class="form-error">
-            Falsches Passwort
+          <input
+            class="form-input"
+            type="password"
+            id="password"
+            v-model="password"
+          />
+          <div class="form-error" v-if="errors.password">
+            {{ errors.password }}
           </div>
         </div>
         <div class="form-group">
-          <button :disabled="email.length ===0 || password.length === 0" class="btn btn--primary btn--block">
+          <button
+            :disabled="email.length === 0 || password.length === 0"
+            class="btn btn--primary btn--block"
+          >
             Login
           </button>
         </div>
@@ -37,4 +56,3 @@ async function login () {
     </section>
   </div>
 </template>
-
