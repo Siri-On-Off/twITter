@@ -54,6 +54,8 @@ const handleNewTweet = () => {
       :user="{ id: tweet.user.id, name: tweet.user.name }"
       :text="tweet.text"
       :createdAt="tweet.created_at"
+      :likes="tweet.likes || 0"
+      :id="tweet.id"
     />
   </section>
 
