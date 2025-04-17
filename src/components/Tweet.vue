@@ -1,8 +1,8 @@
 <script setup>
-import { format, formatDistance } from "date-fns";
+import { formatDistance } from "date-fns";
 import { de } from "date-fns/locale";
 import { likeTweet } from "../api/requests";
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useAuth } from "../api/auth";
 import { RouterLink } from "vue-router";
 
@@ -30,18 +30,23 @@ const props = defineProps({
     type: Number,
     required: true,
   },
+  liked_tweets: {
+    type: Array,
+    required: true,
+    default: () => [],
+  },
 });
 
-//Day.Month.Year HH:MM
-//const formattedDate = format(new Date(props.createdAt), "dd.MM.yyyy HH:mm");
 const distance = formatDistance(new Date(props.createdAt), new Date(), {
   locale: de,
 });
 
 const currentLikes = ref(props.likes);
+const alreadyLiked = computed(() => props.liked_tweets.includes(props.id));
+const errorMessage = ref("");
 
 const addLikes = async () => {
-  if (!isLoggedIn.value) {
+  if ( !isLoggedIn.value || alreadyLiked.value ) {
     return;
   }
 
@@ -50,6 +55,7 @@ const addLikes = async () => {
     currentLikes.value = tweet.likes;
   } catch (error) {
     console.error(error);
+    errorMessage.value = "Failed to like the tweet. Please try again.";
   }
 };
 </script>
@@ -57,7 +63,7 @@ const addLikes = async () => {
 <template>
   <div class="tweet">
     <div class="tweet__avatar">
-      <img :src="`https://i.pravatar.cc/100?u=${user.id}`" alt="" />
+      <img :src="`https://i.pravatar.cc/100?u=${user.id}`" alt="User avatar" />
     </div>
     <div class="tweet__content">
       <div class="tweet__header">
@@ -68,13 +74,22 @@ const addLikes = async () => {
         {{ text }}
       </div>
       <div class="tweet__likes">
-        <button @click.prevent="addLikes" v-if="isLoggedIn">
+        <button @click.prevent="addLikes" 
+        :disabled="!isLoggedIn || alreadyLiked"
+        >
           {{ currentLikes }} 💗
         </button>
-        <RouterLink to="/login" v-else>
-          {{ currentLikes }} 💗
+        <RouterLink to="/login" v-if="!isLoggedIn"> 
+          Login to like 
         </RouterLink>
       </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+</style>

@@ -56,6 +56,7 @@ const handleNewTweet = () => {
       :createdAt="tweet.created_at"
       :likes="tweet.likes || 0"
       :id="tweet.id"
+      :liked_tweets="tweet.liked_tweets"
     />
   </section>
 
