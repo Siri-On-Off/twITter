@@ -46,7 +46,7 @@ const alreadyLiked = computed(() => props.liked_tweets.includes(props.id));
 const errorMessage = ref("");
 
 const addLikes = async () => {
-  if ( !isLoggedIn.value || alreadyLiked.value ) {
+  if ( !isLoggedIn || alreadyLiked.value ) {
     return;
   }
 
